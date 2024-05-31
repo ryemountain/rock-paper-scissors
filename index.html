@@ -1,0 +1,47 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        function getComputerChoice() {
+            let computerChoice;
+            let randomNumber = Math.random();
+
+            if (randomNumber < 0.33) {
+                computerChoice = "Rock"
+            }
+            else if (randomNumber < 0.66) {
+                computerChoice = "Paper"
+            }
+            else {
+                computerChoice = "Scissors"
+            }
+            
+            return computerChoice;
+        }
+
+        function getHumanChoice() {
+            let humanChoice;
+            let correctInput = false;
+
+            while (!correctInput)
+            {
+                let humanInput = prompt("Please choose Rock, Paper or" +
+                " Scissors");
+                if (humanInput === "Rock" || humanInput === "Paper" || humanInput === "Scissors")
+                {
+                    correctInput = true;
+                    humanChoice = humanInput;
+                }
+            }
+
+            return humanChoice;
+
+        }
+        getHumanChoice();
+    </script>
+</body>
+
+</html>
