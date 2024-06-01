@@ -60,3 +60,8 @@ Step 6:
 Write the logic to play the entire game
 Your game will play 5 rounds. You will write a function named playGame that calls playRound to play 5 rounds, keeps track of the scores and declares a winner at the end.
 
+- Declare a function playGame.
+- In the function, declare and initialize a variable "roundNumber" with a value of 1 
+- In the function, create a while loop which runs as long as the number of rounds is below or equal to five.
+- In the loop, call playRound and increment roundNumber
+- At the end of the function, create a conditional statement that compares the scores of the human and computer player and announces the winner 

@@ -39,7 +39,7 @@
                 //After input, make the whole input string lowercase
                 //After that, make the first letter uppercase
                 humanInput = humanInput.slice(0, 1).toUpperCase() +
-                humanInput.slice(1);
+                    humanInput.slice(1);
 
                 if (humanInput === "Rock" || humanInput === "Paper" || humanInput === "Scissors") {
                     correctInput = true;
@@ -77,10 +77,34 @@
             //otherwise, increment human score.
         }
 
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
+        function playGame() {
 
-        playRound(computerChoice, humanChoice);
+            let roundNumber = 1;
+
+            console.log("Game started!");
+
+            while (roundNumber <= 5) {
+                const humanChoice = getHumanChoice();
+                const computerChoice = getComputerChoice();
+                playRound(computerChoice, humanChoice);
+                roundNumber++;
+            }
+
+            if (humanScore > computerScore) {
+                console.log("Human scored " + humanScore +
+                    ", computer scored " + computerScore + ". Human wins!")
+            }
+            else if (computerScore > humanScore) {
+                console.log("Human scored " + humanScore +
+                    ", computer scored " + computerScore + ". Computer wins!")
+            }
+            else {
+                console.log("Human scored " + humanScore +
+                    ", computer scored " + computerScore + ". The game is a draw!")
+            }
+        }
+        
+        playGame();
 
     </script>
 </body>
