@@ -5,6 +5,10 @@
 
 <body>
     <script>
+
+        let humanScore = 0;
+        let computerScore = 0;
+
         function getComputerChoice() {
             let computerChoice;
             let randomNumber = Math.random();
@@ -18,7 +22,7 @@
             else {
                 computerChoice = "Scissors"
             }
-            
+
             return computerChoice;
         }
 
@@ -26,12 +30,10 @@
             let humanChoice;
             let correctInput = false;
 
-            while (!correctInput)
-            {
+            while (!correctInput) {
                 let humanInput = prompt("Please choose Rock, Paper or" +
-                " Scissors");
-                if (humanInput === "Rock" || humanInput === "Paper" || humanInput === "Scissors")
-                {
+                    " Scissors");
+                if (humanInput === "Rock" || humanInput === "Paper" || humanInput === "Scissors") {
                     correctInput = true;
                     humanChoice = humanInput;
                 }
@@ -40,7 +42,38 @@
             return humanChoice;
 
         }
-        getHumanChoice();
+
+        function playRound(computerChoice, humanChoice) {
+
+            //if computer choice === human choice, 
+            //do not increment any score.
+            if (computerChoice === humanChoice)
+                console.log("Computer chose " + computerChoice +
+                    ", human chose " + humanChoice + ", it's a draw!");
+
+            //if computer choice is better than human score,
+            //increment computer score.
+            else if ((computerChoice == "Rock" && humanChoice == "Scissors")
+                || (computerChoice == "Paper" && humanChoice == "Rock")
+                || (computerChoice == "Scissors" && humanChoice == "Paper")) {
+                computerScore++
+                console.log("Computer chose " + computerChoice +
+                    ", human chose " + humanChoice + ", computer wins!");
+            }
+            else {
+                humanScore++;
+                console.log("Computer chose " + computerChoice +
+                    ", human chose " + humanChoice + ", human wins!")
+            }
+
+            //otherwise, increment human score.
+        }
+
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+
+        playRound(computerChoice, humanChoice);
+
     </script>
 </body>
 
