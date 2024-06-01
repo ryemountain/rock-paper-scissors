@@ -53,6 +53,9 @@ For all three outcomes above, log the result.
 
 4.2 Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
 
+- After input, make the whole input string lowercase
+- After that, make the first letter uppercase
+
 Step 6: 
 Write the logic to play the entire game
 Your game will play 5 rounds. You will write a function named playGame that calls playRound to play 5 rounds, keeps track of the scores and declares a winner at the end.

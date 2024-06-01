@@ -33,6 +33,14 @@
             while (!correctInput) {
                 let humanInput = prompt("Please choose Rock, Paper or" +
                     " Scissors");
+
+                humanInput = humanInput.toLowerCase();
+
+                //After input, make the whole input string lowercase
+                //After that, make the first letter uppercase
+                humanInput = humanInput.slice(0, 1).toUpperCase() +
+                humanInput.slice(1);
+
                 if (humanInput === "Rock" || humanInput === "Paper" || humanInput === "Scissors") {
                     correctInput = true;
                     humanChoice = humanInput;
